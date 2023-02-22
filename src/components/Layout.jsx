@@ -1,6 +1,7 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import {
+  AcademicCapIcon,
   Bars3Icon,
   CalendarIcon,
   BriefcaseIcon,
@@ -8,28 +9,71 @@ import {
   MegaphoneIcon,
   UserGroupIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
+} from "@heroicons/react/24/outline";
+import Sidebar from "./Sidebar";
+import CryptoNewsFeed from "./CryptoNews";
 
 const navigation = [
-  { name: 'Invistations', href: '#', icon:BriefcaseIcon, current: true },
-  { name: 'Asset Sources', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Profile', href: '#', icon: UserGroupIcon, current: false },
-  { name: 'Biling', href: '#', icon: MagnifyingGlassCircleIcon, current: false },
-  { name: 'Sign out', href: '#', icon: MegaphoneIcon, current: false },
-]
+  {
+    id: 0,
+    name: "Assets",
+    href: "/",
+    icon: AcademicCapIcon,
+    current: true,
+  },
+  {
+    id: 1,
+    name: "Invistations",
+    href: "/invistations",
+    icon: BriefcaseIcon,
+    current: true,
+  },
+  {
+    id: 2,
+    name: "Asset Sources",
+    href: "/sources",
+    icon: CalendarIcon,
+    current: false,
+  },
+  { 
+    id: 3, 
+    name: "Profile", 
+    href: "/profile", 
+    icon: UserGroupIcon, 
+    current: false 
+  },
+  {
+    id: 4,
+    name: "Billing",
+    href: "/biling",
+    icon: MagnifyingGlassCircleIcon,
+    current: false,
+  },
+  { 
+    id: 5, 
+    name: "Sign out", 
+    href: "/sign-out", 
+    icon: MegaphoneIcon, 
+    current: false 
+  },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
-export default function Layout({children, secondChildren}) {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+export default function Layout({ children, secondChildren }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <>
-      <div className="flex min-h-screen" style={{ height: 'auto' }}>
+      <div className="flex h-screen" style={{ height: "auto" }}>
         <Transition.Root show={sidebarOpen} as={Fragment}>
-          <Dialog as="div" className="relative z-40 lg:hidden" onClose={setSidebarOpen}>
+          <Dialog
+            as="div"
+            className="relative z-40 lg:hidden"
+            onClose={setSidebarOpen}
+          >
             <Transition.Child
               as={Fragment}
               enter="transition-opacity ease-linear duration-300"
@@ -69,7 +113,10 @@ export default function Layout({children, secondChildren}) {
                         onClick={() => setSidebarOpen(false)}
                       >
                         <span className="sr-only">Close sidebar</span>
-                        <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                        <XMarkIcon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
                       </button>
                     </div>
                   </Transition.Child>
@@ -85,19 +132,21 @@ export default function Layout({children, secondChildren}) {
                       <div className="space-y-1 px-2">
                         {navigation.map((item) => (
                           <a
-                            key={item.name}
+                            key={item.id}
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? 'bg-gray-100 text-gray-900'
-                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
-                              'group flex items-center px-2 py-2 text-base font-medium rounded-md'
+                                ? "bg-gray-100 text-gray-900"
+                                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+                              "group flex items-center px-2 py-2 text-base font-medium rounded-md"
                             )}
                           >
                             <item.icon
                               className={classNames(
-                                item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
-                                'mr-4 h-6 w-6'
+                                item.current
+                                  ? "text-gray-500"
+                                  : "text-gray-400 group-hover:text-gray-500",
+                                "mr-4 h-6 w-6"
                               )}
                               aria-hidden="true"
                             />
@@ -108,6 +157,7 @@ export default function Layout({children, secondChildren}) {
                     </nav>
                   </div>
                   <div className="flex flex-shrink-0 border-t border-gray-200 p-4">
+                    {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a href="#" className="group block flex-shrink-0">
                       <div className="flex items-center">
                         <div>
@@ -121,7 +171,9 @@ export default function Layout({children, secondChildren}) {
                           <p className="text-base font-medium text-gray-700 group-hover:text-gray-900">
                             Whitney Francis
                           </p>
-                          <p className="text-sm font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
+                          <p className="text-sm font-medium text-gray-500 group-hover:text-gray-700">
+                            View profile
+                          </p>
                         </div>
                       </div>
                     </a>
@@ -136,64 +188,7 @@ export default function Layout({children, secondChildren}) {
         </Transition.Root>
 
         {/* Static sidebar for desktop */}
-        <div className="hidden lg:flex lg:flex-shrink-0">
-          <div className="flex w-64 flex-col">
-            {/* Sidebar component, swap this element with another sidebar if you like */}
-            <div className="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-gray-100">
-              <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
-                <div className="flex flex-shrink-0 items-center px-4">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt="Your Company"
-                  />
-                </div>
-                <nav className="mt-5 flex-1" aria-label="Sidebar">
-                  <div className="space-y-1 px-2">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? 'bg-gray-200 text-gray-900'
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
-                          'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
-                        )}
-                      >
-                        <item.icon
-                          className={classNames(
-                            item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
-                            'mr-3 h-6 w-6'
-                          )}
-                          aria-hidden="true"
-                        />
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </nav>
-              </div>
-              <div className="flex flex-shrink-0 border-t border-gray-200 p-4">
-                <a href="#" className="group block w-full flex-shrink-0">
-                  <div className="flex items-center">
-                    <div>
-                      <img
-                        className="inline-block h-9 w-9 rounded-full"
-                        src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
-                        alt=""
-                      />
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">Whitney Francis</p>
-                      <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Sidebar classNames={classNames} navigation={navigation} />
         <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
           <div className="lg:hidden">
             <div className="flex items-center justify-between border-b border-gray-200 bg-gray-50 px-4 py-1.5">
@@ -216,8 +211,8 @@ export default function Layout({children, secondChildren}) {
               </div>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row flex-3">
-  <main className="border-l border-gray-200 flex-2 overflow-y-auto focus:outline-none" style={{ height: 'auto' }}>
+          <div className="flex flex-col lg:flex-row overflow-x-hidden">
+  <main className="border-l border-gray-200 w-2/3 overflow-y-auto focus:outline-none" style={{ height: 'auto' }}>
     {/* Start main area*/}
     <div className=" py-6 px-4 sm:px-6 lg:px-8">
       <div className=" rounded-lg  border-gray-200" />
@@ -226,17 +221,16 @@ export default function Layout({children, secondChildren}) {
     {/* End main area */}
   </main>
   <aside className="border-l border-gray-200 flex-1 overflow-y-auto focus:outline-none">
-  <div className="py-6 px-4 sm:px-6 lg:px-8" style={{ height: 'auto' }}>
+  <div className="py-6 px-4 sm:px-6 lg:px-8 overflow-x-hidden" style={{ height: '100vh' }}>
     <div className="rounded-lg border-gray-200" />
-    <div>{secondChildren}</div>
+    <CryptoNewsFeed />
   </div>
 </aside>
-
 </div>
+
 
         </div>
       </div>
     </>
-  )
+  );
 }
-

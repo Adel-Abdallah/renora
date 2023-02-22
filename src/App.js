@@ -1,28 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PieChart from './components/PieChart';
-import Chart from './components/Chart';
-
 import Layout from './components/Layout';
-import Main from './components/Main';
-import chartData from './data/data';
-
+import Asset from "./pages/Asset"
+import Biling from "./pages/Biling"
+import Profile from "./pages/Profile"
+import Sources from "./pages/Sources"
+import Invistations from "./pages/Invistations"
 import './index.css';
 
 const App = () => {
   return (
-  <Layout children={<Main />}
-  secondChildren={
-    <>
-      <Chart data={chartData.assets} />
-      <PieChart data={chartData.portfolioSummary}/>
-    </>
-  }
-  
-  />
-  
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Asset/>} />
+          <Route path="/invistations" element={<Invistations />} />
+          <Route path="/biling" element={<Biling/>} />
+          <Route path="/sources" element={<Sources/>} />
+          <Route path="/profile" element={<Profile/>} />
+        </Routes>
+      </Layout>
+    </Router>
   );
-  };
-  
-  export default App;
+};
 
+export default App;

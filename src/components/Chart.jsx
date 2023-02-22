@@ -13,7 +13,7 @@ import {
 const Chart = ({ data }) => {
   return (
     <div>
-    <BarChart width={450} height={300} data={data}>
+    <BarChart width={600} height={300} data={data}>
       <XAxis dataKey="name" stroke="#8884d8" />
       <YAxis />
       <Tooltip wrapperStyle={{ width: 100, backgroundColor: '#ccc' }} />
