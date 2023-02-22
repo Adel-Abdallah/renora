@@ -23,7 +23,6 @@ function classNames(...classes) {
 }
 
 export default function Layout({children, secondChildren}) {
-    console.log("children, secondChildren", children, secondChildren)
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
