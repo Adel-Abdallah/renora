@@ -4,8 +4,8 @@ export default function Assets() {
   const data = chartData.portfolioSummary
   return (
     <div>
-    <div className="sm:flex sm:items-center">
-      <div className="sm:flex-auto">
+      <div className="sm:flex sm:items-center place-content-around">
+        <div className="sm:flex-auto">
           <h1 className="text-xl font-semibold text-gray-900">Assets</h1>
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
@@ -19,45 +19,36 @@ export default function Assets() {
       </div>
       <div className="mt-8 flow-root">
         <div className="-my-2 -mx-6 overflow-x-auto lg:-mx-8">
-          <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-          <table className="min-w-full divide-y divide-gray-300">
-              <thead>
-                <tr>
-                <th scope="col" className="py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">
-                 {""}
-                  </th>
-                <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                  Amont
-                  </th>
-                  <th scope="col" className="py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">
-                  Realized P&L
-                  </th>
-                  <th scope="col" className="py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">
-                  Unrealized P&L
-                  </th>
-                  <th scope="col" className="py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">
-                  Total P&L
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((asset) => (
-                  <tr key={asset.asset}>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{asset.asset}</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{asset.amount}</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{asset.realized}</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{asset.unrealized}</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{asset.total}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <div className="mt-8">
+  <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 mx-auto max-w-7xl">
+    {data.map((asset) => (
+      <div key={asset.asset} className="bg-white rounded-lg shadow-md p-6 sm:p-8">
+        <h2 className="text-lg font-medium text-gray-900 mb-4">{asset.asset}</h2>
+        <dl>
+          <div className="flex justify-between text-sm font-medium text-gray-500">
+            <dt>Amount</dt>
+            <dd>{asset.amount}</dd>
           </div>
+          <div className="flex justify-between text-sm font-medium text-gray-500 mt-2">
+            <dt>Realized P&amp;L</dt>
+            <dd>{asset.realized}</dd>
+          </div>
+          <div className="flex justify-between text-sm font-medium text-gray-500 mt-2">
+            <dt>Unrealized P&amp;L</dt>
+            <dd>{asset.unrealized}</dd>
+          </div>
+          <div className="flex justify-between text-sm font-medium text-gray-500 mt-2">
+            <dt>Total P&amp;L</dt>
+            <dd>{asset.total}</dd>
+          </div>
+        </dl>
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
       </div>
     </div>
   )
 }
-
-
-

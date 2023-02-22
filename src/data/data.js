@@ -84,41 +84,42 @@ const chartData = {
       },
     ],
     portfolioSummary: [
-      { asset: 'Bitcoin', amount: 1.5, realized: 48525, unrealized: 34875, total: 83400 },
-      { asset: 'Ethereum', amount: 10, realized: 21750, unrealized: 65250, total: 87000 },
-      { asset: 'Cardano', amount: 2000, realized: 8450, unrealized: 92550, total: 101000 },
-      { asset: 'Solana', amount: 50, realized: 2640, unrealized: 96480, total: 99120 },
-      { asset: 'Polkadot', amount: 100, realized: 17500, unrealized: 43750, total: 61250 },
-      { asset: 'Chainlink', amount: 500, realized: 10600, unrealized: 54600, total: 65200 },
-      { asset: 'Algorand', amount: 1000, realized: 5100, unrealized: 45900, total: 51000 },
-      { asset: 'Stellar', amount: 5000, realized: 3800, unrealized: 49400, total: 53200 },
+      { asset: 'Bitcoin',symbol: 'BTC', amount: 1.5, realized: 48525, unrealized: 34875, total: 83400 },
+      { asset: 'Ethereum',symbol: 'ETH', amount: 10, realized: 21750, unrealized: 65250, total: 87000 },
+      { asset: 'Cardano',  symbol: 'ADA', amount: 2000, realized: 8450, unrealized: 92550, total: 101000 },
+      { asset: 'Solana',symbol: 'SOL', amount: 50, realized: 2640, unrealized: 96480, total: 99120 },
+      { asset: 'Polkadot', symbol: 'DOT', amount: 100, realized: 17500, unrealized: 43750, total: 61250 },
+      { asset: 'Chainlink',symbol: 'LINK', amount: 500, realized: 10600, unrealized: 54600, total: 65200 },
+      { asset: 'Algorand',symbol:'ALGO', amount: 1000, realized: 5100, unrealized: 45900, total: 51000 },
+      { asset: 'Stellar', symbol:'XLM', amount: 5000, realized: 3800, unrealized: 49400, total: 53200 },
     ],
     
     treemapData: {
       name: 'Portfolio',
       children: [
         {
-          name: 'Bitcoin',
+          name: 'BTC',
           value: 500
         },
         {
-          name: 'Ethereum',
+          name: 'ETH',
           value: 4000
         },
         {
-          name: 'Litecoin',
+          name: 'LTC',
           value: 7500
         },
         {
-          name:"Solana",
-          value:900
+          name: 'SOL',
+          value: 900
         },
         {
-          name: "Dogecoin",
-          value:12000
+          name: 'DOGE',
+          value: 12000
         }
       ]
     }
+    
   };
   
   export default chartData;

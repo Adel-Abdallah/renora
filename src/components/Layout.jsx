@@ -12,6 +12,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Sidebar from "./Sidebar";
 import CryptoNewsFeed from "./CryptoNews";
+import Source from "../pages/Sources";
 
 const navigation = [
   {
@@ -35,12 +36,12 @@ const navigation = [
     icon: CalendarIcon,
     current: false,
   },
-  { 
-    id: 3, 
-    name: "Profile", 
-    href: "/profile", 
-    icon: UserGroupIcon, 
-    current: false 
+  {
+    id: 3,
+    name: "Profile",
+    href: "/profile",
+    icon: UserGroupIcon,
+    current: false,
   },
   {
     id: 4,
@@ -49,12 +50,12 @@ const navigation = [
     icon: MagnifyingGlassCircleIcon,
     current: false,
   },
-  { 
-    id: 5, 
-    name: "Sign out", 
-    href: "/sign-out", 
-    icon: MegaphoneIcon, 
-    current: false 
+  {
+    id: 5,
+    name: "Sign out",
+    href: "/sign-out",
+    icon: MegaphoneIcon,
+    current: false,
   },
 ];
 
@@ -211,24 +212,28 @@ export default function Layout({ children, secondChildren }) {
               </div>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row overflow-x-hidden">
-  <main className="border-l border-gray-200 w-2/3 overflow-y-auto focus:outline-none" style={{ height: 'auto' }}>
-    {/* Start main area*/}
-    <div className=" py-6 px-4 sm:px-6 lg:px-8">
-      <div className=" rounded-lg  border-gray-200" />
-      {children}
-    </div>
-    {/* End main area */}
-  </main>
-  <aside className="border-l border-gray-200 flex-1 overflow-y-auto focus:outline-none">
-  <div className="py-6 px-4 sm:px-6 lg:px-8 overflow-x-hidden" style={{ height: '100vh' }}>
-    <div className="rounded-lg border-gray-200" />
-    <CryptoNewsFeed />
-  </div>
-</aside>
-</div>
-
-
+          <div className="flex flex-wrap flex-col lg:flex-row overflow-x-hidden">
+            <main
+              className=" border-gray-200 sm:w-full md:w-full lg:w-2/3 overflow-y-auto focus:outline-none"
+              style={{ height: "auto"}}
+            >
+              {/* Start main area*/}
+              <div className="py-6 px-4 sm:px-6 lg:px-8">
+                <div className="rounded-lg border-gray-200" />
+                {children}
+              </div>
+              {/* End main area */}
+            </main>
+            <aside className="border-l border-gray-200 flex-1 overflow-y-auto focus:outline-none">
+              <div
+                className="py-6 px-4 sm:px-6 lg:px-8 overflow-x-hidden"
+                style={{ height: "auto"}}
+              >
+                <div className="rounded-lg border-gray-200" />
+                <Source />
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
     </>

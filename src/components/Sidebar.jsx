@@ -52,10 +52,6 @@ function Sidebar({navigation, classNames}) {
                     alt=""
                   />
                 </div>
-                <div className="ml-3">
-                  <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">Whitney Francis</p>
-                  <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
-                </div>
               </div>
             </Link>
           </div>

@@ -1,7 +1,10 @@
 import React from 'react';
-
+import VChart from '../components/VChart';
+import chartData from '../data/data';
 function Invistations() {
-  return <div>Invistations page!</div>;
+  return (
+    <VChart data={chartData.portfolioSummary}/>
+  )
 }
 
 export default Invistations;
