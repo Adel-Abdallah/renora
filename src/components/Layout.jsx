@@ -211,20 +211,14 @@ export default function Layout({ children, secondChildren }) {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap justify-center overflow-x-hidden">
-  <main className="w-full lg:w-1/2 border-gray-200 sm:w-full md:w-full overflow-y-auto focus:outline-none">
-    <div className="py-6 px-4 sm:px-4 lg:px-8">
-      <div className="rounded-lg border-gray-200" />
-      {children}
-    </div>
-  </main>
-  <aside className="w-full lg:w-1/2 lg:px-8 overflow-auto focus:outline-none">
-    <div className="py-6 px-4 sm:px-4 lg:px-8 overflow-auto">
-      <div className="rounded-lg  overflow-auto" />
-      <Source />
-    </div>
-  </aside>
-</div>
+          <main class="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
+  <div class="mt-16 p-4">
+    <Source />
+  </div>
+  <div class="p-4">
+    {children}
+  </div>
+</main>
 
         </div>
       </div>
