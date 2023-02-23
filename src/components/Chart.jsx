@@ -17,8 +17,8 @@ const Chart = ({ data }) => {
   }));
 
   return (
-    <div>
-      <LineChart width={400} height={300} data={transformedData}>
+    <div  style={{ width: '500px', height: '258px' }}>
+      <LineChart width={450} height={300} data={transformedData}>
         <XAxis dataKey="name" stroke="#8884d8" />
         <YAxis />
         <Tooltip wrapperStyle={{ width: 50, backgroundColor: '#ccc' }} />
