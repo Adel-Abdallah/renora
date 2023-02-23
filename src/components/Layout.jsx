@@ -23,8 +23,8 @@ const navigation = [
   },
   {
     id: 1,
-    name: "Invistations",
-    href: "/invistations",
+    name: "Invitations",
+    href: "/invitations",
     icon: BriefcaseIcon,
     current: true,
   },

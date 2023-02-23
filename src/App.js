@@ -5,7 +5,7 @@ import Asset from "./pages/Asset"
 import Biling from "./pages/Biling"
 import Profile from "./pages/Profile"
 import Sources from "./pages/Sources"
-import Invistations from "./pages/Invistations"
+import Invitations from "./pages/Invitations"
 import './index.css';
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Asset/>} />
-          <Route path="/invistations" element={<Invistations />} />
+          <Route path="/invitations" element={<Invitations />} />
           <Route path="/biling" element={<Biling/>} />
           <Route path="/sources" element={<Sources/>} />
           <Route path="/profile" element={<Profile/>} />
