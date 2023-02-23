@@ -3,7 +3,7 @@ import chartData from "../data/data"
 export default function Assets() {
   const data = chartData.portfolioSummary
   return (
-    <div className='w-full flex flex-col justify-center flex-wrap '>
+    <div className='w-full flex flex-col justify-center flex-wrap p-4 '>
       {/* <div className="sm:flex sm:items-center place-content-around">
         <div className="sm:flex-auto">
           <h1 className="text-xl font-semibold text-gray-900">Assets</h1>

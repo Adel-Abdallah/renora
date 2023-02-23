@@ -212,10 +212,10 @@ export default function Layout({ children, secondChildren }) {
             </div>
           </div>
           <main class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2" style={{ gridAutoFlow: 'dense' }}>
-  <div class="mt-16 p-4">
+  <div>
     <Source />
   </div>
-  <div class="p-4">
+  <div>
     {children}
   </div>
 </main>
