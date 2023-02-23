@@ -19,33 +19,33 @@ export default function Assets() {
       </div>
       <div className="mt-8 flow-root">
         <div className="-my-2 -mx-6 overflow-x-auto lg:-mx-8">
-        <div className="mt-8">
-  <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 mx-auto max-w-7xl">
-    {data.map((asset) => (
-      <div key={asset.asset} className="bg-white rounded-lg shadow-md p-6 sm:p-8">
-        <h2 className="text-lg font-medium text-gray-900 mb-4">{asset.asset}</h2>
-        <dl>
-          <div className="flex justify-between text-sm font-medium text-gray-500">
-            <dt>Amount</dt>
-            <dd>{asset.amount}</dd>
+        <div className="mt-8" style={{ height: 'calc(100vh - 200px)', overflowY: 'auto' }}>
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 mx-auto max-w-7xl">
+            {data.map((asset) => (
+              <div key={asset.asset} className="bg-white rounded-lg shadow-md p-6 sm:p-8">
+                <h2 className="text-lg font-medium text-gray-900 mb-4">{asset.asset}</h2>
+                <dl>
+                  <div className="flex justify-between text-sm font-medium text-gray-500">
+                    <dt>Amount</dt>
+                    <dd>{asset.amount}</dd>
+                  </div>
+                  <div className="flex justify-between text-sm font-medium text-gray-500 mt-2">
+                    <dt>Realized P&amp;L</dt>
+                    <dd>{asset.realized}</dd>
+                  </div>
+                  <div className="flex justify-between text-sm font-medium text-gray-500 mt-2">
+                    <dt>Unrealized P&amp;L</dt>
+                    <dd>{asset.unrealized}</dd>
+                  </div>
+                  <div className="flex justify-between text-sm font-medium text-gray-500 mt-2">
+                    <dt>Total P&amp;L</dt>
+                    <dd>{asset.total}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))}
           </div>
-          <div className="flex justify-between text-sm font-medium text-gray-500 mt-2">
-            <dt>Realized P&amp;L</dt>
-            <dd>{asset.realized}</dd>
-          </div>
-          <div className="flex justify-between text-sm font-medium text-gray-500 mt-2">
-            <dt>Unrealized P&amp;L</dt>
-            <dd>{asset.unrealized}</dd>
-          </div>
-          <div className="flex justify-between text-sm font-medium text-gray-500 mt-2">
-            <dt>Total P&amp;L</dt>
-            <dd>{asset.total}</dd>
-          </div>
-        </dl>
-      </div>
-    ))}
-  </div>
-</div>
+        </div>
 
         </div>
       </div>

@@ -11,7 +11,6 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import Sidebar from "./Sidebar";
-import CryptoNewsFeed from "./CryptoNews";
 import Source from "../pages/Sources";
 
 const navigation = [
@@ -224,12 +223,12 @@ export default function Layout({ children, secondChildren }) {
               </div>
               {/* End main area */}
             </main>
-            <aside className="border-l border-gray-200 flex-1 overflow-y-auto focus:outline-none">
+            <aside className="border-l border-gray-200 flex-1 overflow-auto focus:outline-none">
               <div
-                className="py-6 px-4 sm:px-6 lg:px-8 overflow-x-hidden"
+                className="py-6 px-4 sm:px-6 lg:px-8 overflow-auto"
                 style={{ height: "auto"}}
               >
-                <div className="rounded-lg border-gray-200" />
+                <div className="rounded-lg border-gray-200 overflow-auto" />
                 <Source />
               </div>
             </aside>
