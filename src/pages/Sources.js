@@ -5,12 +5,16 @@ import chartData from '../data/data';
 
 function Source() {
   return (
-    <div className='w-full flex flex-col justify-center '>
-      
-    <Chart data={chartData.assets} />
-    <PieChart data={chartData.portfolioSummary} />
+    <div className='grid grid-cols-1 gap-16 '>
+      <div>
+        <Chart data={chartData.assets} />
+      </div>
+      <div>
+        <PieChart data={chartData.portfolioSummary} />
+      </div>
     </div>
   )
 }
 
 export default Source;
+
