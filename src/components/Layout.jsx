@@ -67,7 +67,7 @@ export default function Layout({ children, secondChildren }) {
 
   return (
     <>
-      <div className="flex h-screen" style={{ height: "auto" }}>
+      <div className="flex h-screen" style={{ height: "auto" , width: "100%" , maxWidth:"100%" }}>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -211,12 +211,13 @@ export default function Layout({ children, secondChildren }) {
               </div>
             </div>
           </div>
-          <main class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2" style={{ gridAutoFlow: 'dense' }}>
+          <main className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2" style={{ gridAutoFlow: 'dense' }}>
   <div>
-    <Source />
+  {children}
   </div>
-  <div>
-    {children}
+  <div  style={{ height: "auto" , width: "100%" , maxWidth:"100%" }}>
+   
+    <Source />
   </div>
 </main>
 
