@@ -6,7 +6,7 @@ const total = totalAmount + totalUnrealized;
 
 const TotalCard = () => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-lg">
+    <div className="bg-white p-4 rounded-lg shadow-lg card">
       <h2 className="text-xl font-bold mb-2">Portfolio Summary</h2>
       <p>Total amount: {totalAmount}</p>
       <p>Total unrealized: {totalUnrealized}</p>

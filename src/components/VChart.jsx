@@ -4,7 +4,7 @@ import { VictoryBar, VictoryChart, VictoryAxis, VictoryTooltip } from 'victory';
 
 const VChart = ({ data }) => {
   return (
-    <div className='grid justify-center align-middle bg-white p-4 rounded-lg shadow-lg'>
+    <div className='grid justify-center align-middle bg-white p-4 rounded-lg shadow-lg card'>
     <VictoryChart
       domainPadding={{ x: 20 }}
       height={150}

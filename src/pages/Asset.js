@@ -15,7 +15,7 @@ export default function Assets() {
   return (
     <div className="w-full flex flex-col justify-center flex-wrap mx-2 ">
       {!isMobile && (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto m-2 p-2">
           <table className="mt-8 w-full sm:px-2">
             <thead>
               <tr className="text-left">
@@ -38,13 +38,13 @@ export default function Assets() {
             </thead>
             <tbody className="divide-y-8">
               {data.map((asset) => (
-                 <tr
-                 key={asset.asset}
-                 className="bg-white p-4 rounded-lg shadow-lg card"
-                 style={{ height: "80px" }}
-               >
+                <tr
+                  key={asset.asset}
+                  className="bg-white p-4 rounded-lg shadow-lg card"
+                  style={{ height: "80px" }}
+                >
                   <td
-                    className="px-2 py-2 whitespace-nowrap font-medium text-gray-900 bg-slate-50 shadow-indigo-500/40"
+                    className="px-2 py-2 whitespace-nowrap font-medium text-gray-900"
                     style={{ width: "60px" }}
                   >
                     <div
@@ -98,7 +98,10 @@ export default function Assets() {
                 </div>
                 <div>
                   <p className="font-medium text-gray-900">{asset.asset}</p>
-                  <p className="text-sm text-gray-500"><b>Amount:</b>{asset.amount}</p>
+                  <p className="text-sm text-gray-500">
+                    <b>Amount:</b>
+                    {asset.amount}
+                  </p>
                 </div>
               </div>
               <div className="flex justify-between mt-4">
