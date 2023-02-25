@@ -7,7 +7,7 @@ const VChart = ({ data }) => {
     <div className='grid justify-center align-middle bg-white p-4 rounded-lg shadow-lg card'>
     <VictoryChart
       domainPadding={{ x: 20 }}
-      height={150}
+      height={200}
       padding={{ left: 50, right: 10, top: 30, bottom: 30 }}
     >
       <VictoryAxis
