@@ -13,7 +13,7 @@ export default function Assets() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col justify-center flex-wrap mx-2 ">
+    <div className="w-full flex flex-col justify-center flex-wrap m-2 ">
       {!isMobile && (
         <div className="overflow-x-auto m-2 p-2">
           <table className="mt-8 w-full sm:px-2">
@@ -44,7 +44,7 @@ export default function Assets() {
                   style={{ height: "80px" }}
                 >
                   <td
-                    className="px-2 py-2 whitespace-nowrap font-medium text-gray-900"
+                    className="p-8 m-8 whitespace-nowrap font-medium text-gray-900"
                     style={{ width: "60px" }}
                   >
                     <div

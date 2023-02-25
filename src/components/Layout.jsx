@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useLocation } from 'react-router-dom';
+import logo from "../logos/main-logo.png"
 import {
   AcademicCapIcon,
   Bars3Icon,
@@ -141,8 +142,8 @@ export default function Layout({ children}) {
                     <div className="flex flex-shrink-0 items-center px-4">
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt="Your Company"
+                        src={logo}
+                        alt="Renora"
                       />
                     </div>
                     <nav aria-label="Sidebar" className="mt-5">
@@ -212,8 +213,8 @@ export default function Layout({ children}) {
               <div>
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt="Your Company"
+                  src={logo}
+                  alt="Renora"
                 />
               </div>
               <div>
