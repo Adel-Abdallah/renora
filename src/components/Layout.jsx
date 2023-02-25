@@ -67,7 +67,7 @@ export default function Layout({ children, secondChildren }) {
 
   return (
     <>
-      <div className="flex h-screen" style={{ height: "auto" , width: "100%" , maxWidth:"100%" }}>
+      <div className="flex h-screen overflow-hidden" style={{ height: "auto" , width: "100%" , maxWidth:"100%" }}>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -120,7 +120,7 @@ export default function Layout({ children, secondChildren }) {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
+                  <div className="h-0 flex-1 pt-5 pb-4">
                     <div className="flex flex-shrink-0 items-center px-4">
                       <img
                         className="h-8 w-auto"
