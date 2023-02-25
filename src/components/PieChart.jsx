@@ -9,6 +9,7 @@ const PieChart = ({ data }) => {
   }));
 
   return (
+    <div className="grid justify-center align-middle border-solid border-2 rounded-lg p-4">
     <div style={{width:"380px" , height:"280px", margin: "auto"}}>
       <ResponsivePie
        data={transformedData}
@@ -37,6 +38,7 @@ const PieChart = ({ data }) => {
         motionStiffness={90}
         motionDamping={15}
       />
+    </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { VictoryBar, VictoryChart, VictoryAxis, VictoryTooltip } from 'victory';
 
 const VChart = ({ data }) => {
   return (
-    
+    <div className='grid justify-center align-middle border-solid border-2 rounded-lg p-4'>
     <VictoryChart
       domainPadding={{ x: 20 }}
       height={150}
@@ -37,6 +37,7 @@ const VChart = ({ data }) => {
         labelComponent={<VictoryTooltip />}
       />
     </VictoryChart>
+    </div>
   );
 };
 

@@ -18,7 +18,7 @@ const Chart = ({ data }) => {
   }));
 
   return (
-    
+    <div className=' border-solid border-2 rounded-lg p-4'>
     <ResponsiveContainer width="95%" height={240}>
       <LineChart
         width={600}
@@ -50,6 +50,7 @@ const Chart = ({ data }) => {
         />
       </LineChart>
     </ResponsiveContainer>
+    </div>
   );
 };
 
