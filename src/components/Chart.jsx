@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import {
+  ResponsiveContainer,
   CartesianGrid,
   Legend,
   Line,
@@ -8,7 +9,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from 'recharts';
+} from "recharts";
 
 const Chart = ({ data }) => {
   const transformedData = data.map((d) => ({
@@ -17,26 +18,37 @@ const Chart = ({ data }) => {
   }));
 
   return (
-    <div  style={{ width: '500px', height: '258px' }}>
-      <LineChart width={450} height={300} data={transformedData}>
+    <ResponsiveContainer width="95%" height={300}>
+      <LineChart
+        width={600}
+        height={300}
+        margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
+        padding={{ top: 0, right: 0, left: 0, bottom: 0 }}
+        data={transformedData}
+      >
         <XAxis dataKey="name" stroke="#8884d8" />
         <YAxis />
-        <Tooltip wrapperStyle={{ width: 50, backgroundColor: '#ccc' }} />
+        <Tooltip wrapperStyle={{ width: 50, backgroundColor: "#ccc" }} />
         <Legend
           width={100}
           wrapperStyle={{
             top: 40,
             right: 20,
-            backgroundColor: '#f5f5f5',
-            border: '1px solid #d5d5d5',
+            backgroundColor: "#f5f5f5",
+            border: "1px solid #d5d5d5",
             borderRadius: 3,
-            lineHeight: '40px',
+            lineHeight: "40px",
           }}
         />
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-        <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={2} />
+        <Line
+          type="monotone"
+          dataKey="value"
+          stroke="#8884d8"
+          strokeWidth={2}
+        />
       </LineChart>
-    </div>
+    </ResponsiveContainer>
   );
 };
 

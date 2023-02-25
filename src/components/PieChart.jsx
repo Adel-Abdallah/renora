@@ -9,11 +9,12 @@ const PieChart = ({ data }) => {
   }));
 
   return (
-    <div style={{ width: '500px', height: '258px' }}>
+    <div className='' style={{width:"380px" , height:"280px", margin: "auto"}}>
       <ResponsivePie
-        data={transformedData}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-        padding={{top: 0, right: 80, bottom: 0, left: 0 }}
+       data={transformedData}
+       fit={true}
+        margin={{ top: 30, right: 30, left: 30, bottom: 30 }}
+        padding={{ top: 0, right: 0, left: 0, bottom: 0 }} 
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}

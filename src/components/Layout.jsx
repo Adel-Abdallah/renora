@@ -211,15 +211,15 @@ export default function Layout({ children, secondChildren }) {
               </div>
             </div>
           </div>
-          <main className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-2" style={{ gridAutoFlow: 'dense' }}>
-  <div>
-  {children}
+          <main className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-2" style={{ gridAutoFlow: 'dense' }}>
+  <div className="lg:col-span-2">
+    {children}
   </div>
-  <div  style={{ height: "auto" , width: "100%" , maxWidth:"100%" }}>
-   
+  <div className="lg:col-span-1 p-4" style={{ height: "auto", width: "auto", maxWidth:"100%" }}>
     <Source />
   </div>
 </main>
+
 
         </div>
       </div>
