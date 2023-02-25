@@ -18,6 +18,7 @@ const Chart = ({ data }) => {
   }));
 
   return (
+    
     <ResponsiveContainer width="95%" height={240}>
       <LineChart
         width={600}

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTooltip } from 'victory';
 
 const VChart = ({ data }) => {
-  console.log('data', data);
   return (
+    
     <VictoryChart
       domainPadding={{ x: 20 }}
       height={150}

@@ -9,7 +9,7 @@ const PieChart = ({ data }) => {
   }));
 
   return (
-    <div className='' style={{width:"380px" , height:"280px", margin: "auto"}}>
+    <div style={{width:"380px" , height:"280px", margin: "auto"}}>
       <ResponsivePie
        data={transformedData}
        fit={true}

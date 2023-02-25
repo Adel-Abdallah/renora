@@ -4,7 +4,7 @@ export default function Assets() {
   const data = chartData.portfolioSummary;
 
   return (
-    <div className="w-full flex flex-col justify-center flex-wrap px-4 mx-2 ">
+    <div className="w-full flex flex-col justify-center flex-wrap mx-2 ">
       <table className="mt-8 w-full">
         <thead>
           <tr>
