@@ -1,5 +1,5 @@
 import React from 'react';
-import PieChart from '../components/PieChart';
+import TotalCard from '../components/TotalCard';
 import VChart from '../components/VChart';
 import chartData from '../data/data';
 
@@ -10,7 +10,7 @@ function Source() {
         <VChart data={chartData.portfolioSummary} />
       </div>
       <div>
-        <PieChart data={chartData.portfolioSummary} />
+       <TotalCard/>
       </div>
     </div>
   )

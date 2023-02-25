@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { useLocation } from 'react-router-dom';
 import {
   AcademicCapIcon,
   Bars3Icon,
@@ -12,6 +13,8 @@ import {
 } from "@heroicons/react/24/outline";
 import Sidebar from "./Sidebar";
 import Source from "../pages/Sources";
+import VChart from "./VChart";
+import chartData from '../data/data'
 
 const navigation = [
   {
@@ -62,8 +65,22 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Layout({ children, secondChildren }) {
+export default function Layout({ children}) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
+
+  let secondChildren = null;
+  if (location.pathname === '/') {
+    secondChildren = <Source />;
+  }if (location.pathname === "/invitations") {
+    secondChildren = <Source />;
+  }if (location.pathname === "/biling") {
+    secondChildren = <VChart data={chartData.portfolioSummary}/>;
+  }if (location.pathname === "/sources") {
+    secondChildren = <Source />;
+  }if (location.pathname === "/profile") {
+    secondChildren = <Source />;
+  }
 
   return (
     <>
@@ -211,14 +228,14 @@ export default function Layout({ children, secondChildren }) {
               </div>
             </div>
           </div>
-          <main className="grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 gap-2 px-4" style={{ gridAutoFlow: 'dense' }}>
-  <div className="lg:col-span-2">
-    {children}
-  </div>
-  <div className=" lg:col-span-1 p-4" style={{ height: "auto", width: "auto", maxWidth:"100%" }}>
-    <Source />
-  </div>
-</main>
+          <main className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-2 px-4" style={{ gridAutoFlow: 'dense' }}>
+      <div className="lg:col-span-2">{children}</div>
+      {secondChildren && (
+        <div className="lg:col-span-1 p-4" style={{ height: 'auto', width: 'auto', maxWidth: '100%' }}>
+          {secondChildren}
+        </div>
+      )}
+    </main>
 
 
         </div>
