@@ -18,7 +18,7 @@ const Chart = ({ data }) => {
   }));
 
   return (
-    <ResponsiveContainer width="95%" height={300}>
+    <ResponsiveContainer width="95%" height={240}>
       <LineChart
         width={600}
         height={300}
@@ -45,7 +45,7 @@ const Chart = ({ data }) => {
           type="monotone"
           dataKey="value"
           stroke="#8884d8"
-          strokeWidth={2}
+          strokeWidth={1}
         />
       </LineChart>
     </ResponsiveContainer>
