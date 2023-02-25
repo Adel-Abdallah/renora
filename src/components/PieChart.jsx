@@ -3,7 +3,7 @@ import { ResponsivePie } from '@nivo/pie';
 
 const PieChart = ({ data }) => {
   const transformedData = data.map((d) => ({
-    id: d.asset,
+    id: d.symbol,
     label: d.symbol,
     value: d.total,
   }));
