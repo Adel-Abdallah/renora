@@ -13,9 +13,10 @@ export default function Assets() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col justify-center flex-wrap m-2 ">
+    <div className="w-full flex flex-col justify-center flex-wrap">
       {!isMobile && (
-        <div className="overflow-x-auto m-2 p-2">
+        <div className="m-2 p-2">
+          <div className="table-container">
           <table className="mt-8 w-full sm:px-2">
             <thead>
               <tr className="text-left">
@@ -36,7 +37,7 @@ export default function Assets() {
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y-8">
+            <tbody className="divide-y-8 overflow-scroll">
               {data.map((asset) => (
                 <tr
                   key={asset.asset}
@@ -78,10 +79,12 @@ export default function Assets() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       )}
 
       {isMobile && (
+        <div className="table-container">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
           {data.map((asset) => (
             <div
@@ -127,6 +130,8 @@ export default function Assets() {
             </div>
           ))}
         </div>
+        </div>
+          
       )}
     </div>
   );
