@@ -46,7 +46,7 @@ body{
   .table-container{
     overflow: hidden;
     min-height: auto;
-    height: 750px;
+    height: 100%;
   }
 }
 
