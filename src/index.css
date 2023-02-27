@@ -32,11 +32,21 @@ body{
 
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
   /* Styles for smaller screens */
+  body{
+    max-height:100dvh;
+    overflow: auto !important;
+  }
   .logo-only {
     display: block;
   }
   .asset-text {
     display: none;
+  }
+
+  .table-container{
+    overflow: hidden;
+    min-height: auto;
+    height: 750px;
   }
 }
 
