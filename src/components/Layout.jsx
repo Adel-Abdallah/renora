@@ -229,14 +229,15 @@ export default function Layout({ children}) {
               </div>
             </div>
           </div>
-          <main className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-2 px-4" style={{ overflow: 'auto' }}>
-  <div className="lg:col-span-2">{children}</div>
+          <main className="main-grid">
+  <div className="content">{children}</div>
   {secondChildren && (
-    <div className="lg:col-span-1 p-4" style={{ height: 'auto', width: 'auto', maxWidth: '100%' }}>
+    <div className="sidebar">
       {secondChildren}
     </div>
   )}
 </main>
+
 
 
 
