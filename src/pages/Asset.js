@@ -15,9 +15,9 @@ export default function Assets() {
   return (
     <div className="w-full flex flex-col justify-center flex-wrap">
       {!isMobile && (
-        <div className="m-2 p-2">
+        
           <div className="table-container">
-          <table className="mt-8 w-full sm:px-2">
+          <table className="mt:8 px-4 w-full sm:px-2">
             <thead>
               <tr className="text-left">
                 <th className="text-left px-2 py-2 whitespace-nowrap text-lg font-medium text-gray-900">
@@ -80,7 +80,7 @@ export default function Assets() {
             </tbody>
           </table>
           </div>
-        </div>
+
       )}
 
       {isMobile && (

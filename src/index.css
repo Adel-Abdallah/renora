@@ -18,6 +18,7 @@ body{
   overflow: scroll;
   min-height: auto;
   height: 750px;
+  padding: 10px;
 }
 
 .card {
@@ -30,34 +31,6 @@ body{
   transform: translateY(-4px);
 }
 
-
-
-.main-grid {
-  grid-template-areas: "content" "sidebar";
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: none;
-}
-
-.sidebar {
-  grid-area: sidebar;
-  order: 1;
-  background-color: #f1f1f1;
-  padding: 16px;
-  overflow: auto;
-}
-
-.content {
-  grid-area: content;
-  order: 2;
-  padding: 16px;
-  overflow: auto;
-}
-
-
- 
-
-
-
 .main-grid {
   display: grid;
   grid-template-areas: "content sidebar";
@@ -69,7 +42,6 @@ body{
 .sidebar {
   grid-area: sidebar;
   order: 1;
-  background-color: #f1f1f1;
   padding: 16px;
   overflow: auto;
 }
